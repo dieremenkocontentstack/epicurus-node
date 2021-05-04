@@ -23,6 +23,8 @@ function Epicurus(redisConfig = {
             pub_sub_1.shutdownSubscribers();
             request_response_1.disableServers();
         },
+        getRedisClient: () => redisClient,
+        getRedisSubClient: () => redisSub,
         close: () => {
             redisSub.unsubscribe();
             redisSub.quit();
